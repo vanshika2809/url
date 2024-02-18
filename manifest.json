@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "CopyTab URLs",
+    "version": "1.0",
+    "description": "Effortlessly copy and organize the URLs of your open tabs in one click.",
+    "permissions": ["tabs", "clipboardWrite"],
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/image16.png",
+        "48": "images/image48.png",
+        "128": "images/image128.png"
+      }
+    },
+    "icons": {
+        "16": "images/image16.png",
+        "48": "images/image48.png",
+        "128": "images/image128.png"
+    },
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
